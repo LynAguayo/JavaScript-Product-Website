@@ -11,7 +11,7 @@ svg{
 
 
 /* -------------------------------------------------------------------
-   Heade
+   Header
 ------------------------------------------------------------------- */
 .header {
     display: flex;
@@ -49,11 +49,6 @@ svg{
 }
 
 /* Menú hamburguesa (mobile) */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
 
 
 /* Slider */
