@@ -59,3 +59,22 @@ thumbnails.forEach((thumbnail, index) => {
         showSlider();
     })
 })
+
+// Cookie Banner
+document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.getElementById('cookiePopup');
+    const acceptCookie = document.getElementById('acceptCookie');
+    
+    // Verificar si ya se aceptaron las cookies
+    if (!localStorage.getItem('cookieAccepted')) {
+        setTimeout(() => {
+            cookiePopup.style.display = 'flex';
+        }, 1000); // Aparece después de 1 segundo
+    }
+
+    // Al hacer clic en Aceptar
+    acceptCookie.addEventListener('click', () => {
+        localStorage.setItem('cookieAccepted', 'true');
+        cookiePopup.style.display = 'none';
+    });
+});
