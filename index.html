@@ -1,148 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨SkinFlow✨</title>
     <!-- Vincula box icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    
+
     <!-- Vincula css files -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media_responsive.css">
-    
+
     <!-- Vincula js files -->
     <script src="js/index.js" defer></script>
-  </head>
+</head>
+
 <body>
-    
+
     <!-- header -->
     <header class="header">
         <a href="#home" class="logo">SkinFlow</a>
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home">Inicio</a>
-            <a href="#description">Descripción</a>
-            <a href="#form">Formulario</a>
-        </nav>
-    </header>
-     <!-- slider -->
-     <div class="slider">
-        <!-- list Items -->
-        <div class="list">
-            <div class="item active">
-                <img src="image/bg1.jpg">
-                <div class="content">
-                    <p>Centella Light Cleansing Oil</p>
-                    <h2>Limpiador oleoso</h2>
-                    <p>
-                        Aceite con centella y 6 aceites vegetales que limpia profundamente sin irritar. Ideal para pieles sensibles.
-                    </p>
+        <div class="menu-container">
+            <i class="bx bx-menu menu-icon" id="menu-icon"></i>
+            <div class="slide-menu">
+                <i class='bx bx-x close-icon'></i>
+                <a href="#home">Inicio</a>
+                <a href="#description">Descripción</a>
+                <a href="#form">Acceso</a>
+                <div class="theme-toggle-container-horizontal">
+                    <span class="theme-toggle-label-horizontal">Oscuro</span>
+                    <label class="theme-toggle-horizontal">
+                        <input type="checkbox" id="theme-toggle-input-horizontal">
+                        <span class="slider-horizontal round"></span>
+                    </label>
+                    <span class="theme-toggle-label-horizontal">Claro</span>
                 </div>
             </div>
-            <div class="item">
-                <img src="image/bg2.jpg">
-                <div class="content">
-                    <p>Centella Ampoule Foam</p>
-                    <h2>Limpiador a base de agua</h2>
-                    <p>
-                        Espuma limpiadora con pH 5.5 que elimina impurezas manteniendo la hidratación natural de la piel.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/bg3.jpg">
-                <div class="content">
-                    <p>Centella Toning Toner</p>
-                    <h2>Tónico</h2>
-                    <p>
-                        Tónico con PHA que renueva la piel diariamente, mejorando textura y poros sin causar irritación.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/bg4.jpg">
-                <div class="content">
-                    <p>Probio-Cica Ampoule</p>
-                    <h2>Sérum</h2>
-                    <p>
-                        Sérum regenerador con centella fermentada y ceramidas que calma mientras refuerza la barrera cutánea.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/bg5.jpg">
-                <div class="content">
-                    <p>Centella Cream</p>
-                    <h2>Crema hidratante</h2>
-                    <p>
-                        Crema ligera con pantenol y TECA que nutre profundamente sin sensación grasa. Perfecta para día y noche.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/bg6.jpg">
-                <div class="content">
-                    <p>Hyalu-Cica Sun SPF 50+</p>
-                    <h2>Protector solar</h2>
-                    <p>
-                      SPF 50+ PA+++ con ácido hialurónico y centella. Protege mientras hidrata, dejando un acabado luminoso.
-                  </p>
-                </div>
-            </div>
-          </div>
-          <!-- flechas -->
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
         </div>
-        <!-- thumbnail -->
-        <div class="thumbnail">
-            <div class="item active">
-                <img src="image/product1.jpg">
-                <div class="content">
-                    Paso 1
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/product2.jpg">
-                <div class="content">
-                    Paso 2
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/product3.jpg">
-                <div class="content">
-                    Paso 3
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/product4.jpg">
-                <div class="content">
-                    Paso 4
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/product5.jpg">
-                <div class="content">
-                    Paso 5
-                </div>
-            </div>
-            <div class="item">
-                <img src="image/product6.jpg">
-                <div class="content">
-                    Paso 6
-                </div>
-            </div>
-          </div>
-      </div>
-      <div id="cookiePopup">
-        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" alt="Cookie Icon">
-        <p>Nuestro sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra 
-            <a href="politica-cookies.html">Política de Cookies</a>.
-        </p>
-        <button id="acceptCookie">Aceptar</button>
-    </div>
-  </body>
-  </html>
+    </header>
 
+    <main>
+        <section id="home" class="home">
+            <!-- slider -->
+            <div class="slider">
+                <!-- list Items -->
+                <div class="list">
+                    <div class="item active">
+                        <img src="image/bg1.jpg">
+                        <div class="content">
+                            <p>Centella Light Cleansing Oil</p>
+                            <h2>Limpiador oleoso</h2>
+                            <p>
+                                Aceite con centella y 6 aceites vegetales que limpia profundamente sin irritar. Ideal
+                                para pieles sensibles.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/bg2.jpg">
+                        <div class="content">
+                            <p>Centella Ampoule Foam</p>
+                            <h2>Limpiador a base de agua</h2>
+                            <p>
+                                Espuma limpiadora con pH 5.5 que elimina impurezas manteniendo la hidratación natural de
+                                la piel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/bg3.jpg">
+                        <div class="content">
+                            <p>Centella Toning Toner</p>
+                            <h2>Tónico</h2>
+                            <p>
+                                Tónico con PHA que renueva la piel diariamente, mejorando textura y poros sin causar
+                                irritación.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/bg4.jpg">
+                        <div class="content">
+                            <p>Probio-Cica Ampoule</p>
+                            <h2>Sérum</h2>
+                            <p>
+                                Sérum regenerador con centella fermentada y ceramidas que calma mientras refuerza la
+                                barrera cutánea.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/bg5.jpg">
+                        <div class="content">
+                            <p>Centella Cream</p>
+                            <h2>Crema hidratante</h2>
+                            <p>
+                                Crema ligera con pantenol y TECA que nutre profundamente sin sensación grasa. Perfecta
+                                para día y noche.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/bg6.jpg">
+                        <div class="content">
+                            <p>Hyalu-Cica Sun SPF 50+</p>
+                            <h2>Protector solar</h2>
+                            <p>
+                                SPF 50+ PA+++ con ácido hialurónico y centella. Protege mientras hidrata, dejando un
+                                acabado luminoso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- flechas -->
+                <div class="arrows">
+                    <button id="prev"><</button>
+                    <button id="next">></button>
+                </div>
+                <!-- thumbnail -->
+                <div class="thumbnail">
+                    <div class="item active">
+                        <img src="image/product1.jpg">
+                        <div class="content">
+                            Paso 1
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/product2.jpg">
+                        <div class="content">
+                            Paso 2
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/product3.jpg">
+                        <div class="content">
+                            Paso 3
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/product4.jpg">
+                        <div class="content">
+                            Paso 4
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/product5.jpg">
+                        <div class="content">
+                            Paso 5
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="image/product6.jpg">
+                        <div class="content">
+                            Paso 6
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Información -->
+        <section id="description" class="description">
+            <div class="container">
+                <h2 class="section-title">Rutina de cuidado facial Skin 1004</h2>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <i class="bx bx-leaf"></i>
+                        <h3>Ingredientes Naturales</h3>
+                        <p>Formulados con extractos de centella asiática y otros ingredientes naturales que calman y
+                            regeneran la piel.</p>
+                    </article>
+                    <article class="info-card">
+                        <i class="bx bx-check-shield"></i>
+                        <h3>Sin Irritantes</h3>
+                        <p>Libres de parabenos, sulfatos, fragancias artificiales y otros ingredientes que pueden
+                            irritar la piel sensible.</p>
+                    </article>
+                    <article class="info-card">
+                        <i class="bx bx-heart"></i>
+                        <h3>Dermatológicamente Testado</h3>
+                        <p>Todos nuestros productos han sido probados clínicamente y son aptos para todo tipo de pieles.
+                        </p>
+                    </article>
+                    <a href="https://www.skin1004.com/" class="btn">Visitar</a>
+                </div>                
+            </div>
+        </section>
+
+        <!-- Sección de Formulario -->
+        <section id="form" class="form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h2 class="section-title">Acceso</h2>
+                    <p class="section-subtitle">Ingresa tus credenciales</p>
+        
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" required 
+                                   placeholder="Mínimo 8 caracteres, 1 mayúscula y 1 número">
+                            <span class="error-message" id="password-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Acceder</button>
+                        <div id="form-error" class="error-message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <section id="users" class="users-section hidden">
+            <div class="container">
+                <h2 class="section-title">Usuarios Registrados</h2>
+                <div class="users-grid" id="users-container">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Usuarios (oculta inicialmente) -->
+        <section id="users" class="users-section hidden">
+            <div class="container">
+                <h2 class="section-title">Lista de usuarios</h2>
+                <div class="users-grid" id="users-container">
+                    <!-- Los usuarios se cargarán dinámicamente desde la API -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="cookiePopup" class="hide">
+        <img src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png" alt="Icono de cookies">
+        <p>Nuestro sitio web utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra
+            <a href="#">Política de Cookies</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button id="acceptCookie">Aceptar</button>
+            <button id="rejectCookie">Rechazar</button>
+        </div>
+        <p class="cookie-info hide">Has rechazado las cookies. Algunas funciones pueden no estar disponibles.</p>
+    </div>
+    
+    <!-- Footer básico -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 SkinFlow. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
