@@ -1,10 +1,20 @@
+/* -------------------------------------------------------------------
+    Importar fuentes y variables globales
+------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
+
 :root{
     --secondary-color: #f78b4d;
     --secondary-color-hover: #ff5e00;
-
 }
 
+/* -------------------------------------------------------------------
+    Estilos generales del body y temas (oscuro / claro)
+------------------------------------------------------------------- */
 body{
     font-family: Poppins;
     margin: 0;
@@ -25,19 +35,26 @@ body.light-theme .slider .list .item::after {
     );
 }
 
-header.light-theme {
-    font-weight: 700;
-    color: black;
+body.light-theme .logo,
+body.light-theme #menu-icon,
+body.light-theme .slide-menu a,
+body.light-theme .close-icon,
+body.light-theme .theme-toggle-label-horizontal {
+    color: #000000 !important;
+}
+
+body.light-theme .header {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* -------------------------------------------------------------------
-    Header
+    Header y navegación
 ------------------------------------------------------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 89%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +63,6 @@ header.light-theme {
     transition: background-color 0.3s ease;
     background-color: transparent; 
 }
-
 
 .logo {
     font-size: 1.5rem;
@@ -73,7 +89,7 @@ header.light-theme {
     z-index: 102;
     padding-left: 2rem;
     font-weight: 600;
-    color: white
+    color: white;
 }
 
 .slide-menu.open {
@@ -106,6 +122,9 @@ header.light-theme {
     display: block;
 }
 
+/* -------------------------------------------------------------------
+    Botón de cambio de tema (toggle)
+------------------------------------------------------------------- */
 .theme-toggle-container-horizontal {
     display: flex;
     align-items: center;
@@ -153,33 +172,34 @@ input:checked + .slider-horizontal {
     background-color: #006eff; 
 }
 
-
 input:checked + .slider-horizontal:before {
     transform: translateX(20px);
 }
 
-/* Menú hamburguesa (mobile) */
-
-
-/* Slider */
-.slider{
+/* -------------------------------------------------------------------
+    Slider principal
+------------------------------------------------------------------- */
+.slider {
     height: 100vh;
     margin-top: -50px;
     position: relative;
 }
-.slider .list .item{
+
+.slider .list .item {
     position: absolute;
     inset: 0 0 0 0;
     overflow: hidden;
     opacity: 0;
     transition: .5s;
 }
-.slider .list .item img{
+
+.slider .list .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.slider .list .item::after{
+
+.slider .list .item::after {
     content: '';
     width: 100%;
     height: 100%;
@@ -190,58 +210,70 @@ input:checked + .slider-horizontal:before {
         to top, #000 40%, transparent
     );
 }
-.slider .list .item .content{
+
+.slider .list .item .content {
     position: absolute;
     left: 10%;
     top: 20%;
     width: 800px;
     max-width: 80%;
     z-index: 1;
+    transition: all 0.3s ease;
 }
-.slider .list .item .content p:nth-child(1){
+
+.slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 10px;
     font-weight: 700;
 }
-.slider .list .item .content h2{
+
+.slider .list .item .content h2 {
     font-size: 60px;
     margin: 0;
 }
-.slider .list .item.active{
+
+.slider .list .item.active {
     opacity: 1;
     z-index: 10;
 }
+
+/* Animaciones de contenido */
 @keyframes showContent {
-    to{
+    to {
         transform: translateY(0);
         filter: blur(0);
         opacity: 1;
     }
 }
+
 .slider .list .item.active p:nth-child(1),
 .slider .list .item.active h2,
-.slider .list .item.active p:nth-child(3){
+.slider .list .item.active p:nth-child(3) {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
     animation: showContent .5s .7s ease-in-out 1 forwards;
 }
-.slider .list .item.active h2{
+
+.slider .list .item.active h2 {
     animation-delay: 1s;
 }
-.slider .list .item.active p:nth-child(3){
+
+.slider .list .item.active p:nth-child(3) {
     animation-duration: 1.3s;
 }
 
-
-/* Arrows */
-.arrows{
+/* -------------------------------------------------------------------
+    Botones de navegación (Flechas)
+------------------------------------------------------------------- */
+.arrows {
     position: absolute;
     top: 30%;
     right: 50px;
     z-index: 100;
 }
-.arrows button{
+
+.arrows button {
     background-color: #eee5;
     border: none;
     font-family: monospace;
@@ -251,14 +283,18 @@ input:checked + .slider-horizontal:before {
     font-size: x-large;
     color: #eee;
     transition: .5s;
+    cursor: pointer;
 }
-.arrows button:hover{
+
+.arrows button:hover {
     background-color: #eee;
     color: black;
 }
 
-/*Thumbnail */
-.thumbnail{
+/* -------------------------------------------------------------------
+    Miniaturas (Thumbnail)
+------------------------------------------------------------------- */
+.thumbnail {
     position: absolute;
     bottom: 50px;
     z-index: 11;
@@ -270,47 +306,45 @@ input:checked + .slider-horizontal:before {
     box-sizing: border-box;
     overflow: auto;
     justify-content: center;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
-.thumbnail::-webkit-scrollbar{
+
+.thumbnail::-webkit-scrollbar {
     width: 0;
 }
-.thumbnail .item{
+
+.thumbnail .item {
     width: 150px;
     height: 220px;
     filter: brightness(0.6) saturate(0.9);
     transition: .5s;
     flex-shrink: 0;
+    scroll-snap-align: start;
+    cursor: pointer;
 }
-.thumbnail .item img{
+
+.thumbnail .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.thumbnail .item.active{
+
+.thumbnail .item.active {
     filter: brightness(1.1) saturate(1.1);
-    color:rgb(10, 10, 10);
+    color: rgb(10, 10, 10);
 }
-.thumbnail .item .content{
+
+.thumbnail .item .content {
     position: absolute;
     inset: auto 10px 10px 10px;
     font-weight: 600;
 }
-@media screen and (max-width: 678px) {
-    .thumbnail{
-        justify-content: start;
-    }
-    .slider .list .item .content h2{
-        font-size: 60px;
-    }
-    .arrows{
-        top: 10%;
-    }
-}
 
-/* ====================================================
-   Sección Description
-==================================================== */
+/* -------------------------------------------------------------------
+    Descripción/Información
+------------------------------------------------------------------- */
 .description {
     padding: 100px 5%;
     background-color: #0a0a0a;
@@ -423,9 +457,9 @@ body.light-theme .info-card p {
     box-shadow: 0 5px 15px rgba(59, 143, 217, 0.3);
 }
 
-/* ====================================================
-   Sección Form
-==================================================== */
+/* -------------------------------------------------------------------
+    Formulario de inicio de sesión
+------------------------------------------------------------------- */
 .form-section {
     padding: 100px 5%;
     background-color: #121212;
@@ -532,7 +566,6 @@ body.light-theme .form-group input {
     box-shadow: 0 5px 15px rgba(255, 106, 0, 0.3);
 }
 
-/* Estilos para la sección de usuarios */
 .users-section {
     padding: 100px 5%;
     background-color: #0f0f0f;
@@ -606,9 +639,9 @@ body.light-theme .user-card p {
     font-size: 0.9rem;
 }
 
-/* ====================================================
-   Footer
-==================================================== */
+/* -------------------------------------------------------------------
+    Footer
+------------------------------------------------------------------- */
 .footer {
     background-color: #0a0a0a;
     padding: 40px 5%;
@@ -662,41 +695,9 @@ body.light-theme .footer p {
     color: white;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-container {
-        padding: 30px 20px;
-    }
-    
-    .footer-iconTop {
-        right: 20px;
-        bottom: 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .cookie-buttons {
-        flex-direction: column;
-    }
-    
-    #cookiePopup button {
-        width: 100%;
-    }
-}
-
-/* Estilos para la alerta de cookies */
+/* -------------------------------------------------------------------
+    Pop-up de cookies
+------------------------------------------------------------------- */
 #cookiePopup {
     position: fixed;
     bottom: 20px;
@@ -778,7 +779,7 @@ body.light-theme .footer p {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Estados y animaciones */
+/* Estados */
 #cookiePopup.hide {
     opacity: 0;
     transform: translateX(-50%) translateY(100px);
@@ -806,7 +807,6 @@ body.light-theme .footer p {
     }
 }
 
-/* Efecto al ocultar botones */
 .cookie-buttons.hidden {
     display: none;
 }

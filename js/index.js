@@ -1,12 +1,17 @@
-// Elementos del DOM
+/* -------------------------------------------------------------------
+   SELECTORES DEL DOM 
+------------------------------------------------------------------- */
 const body = document.body;
 const menuIcon = document.querySelector("#menu-icon");
 const slideMenu = document.querySelector(".slide-menu");
 const closeMenuIcon = document.querySelector(".slide-menu .close-icon");
 const slideMenuItems = document.querySelectorAll(".slide-menu a");
 const themeToggleInputHorizontal = document.getElementById("theme-toggle-input-horizontal");
+const header = document.querySelector(".header");
 
-// Función para establecer el tema
+/* -------------------------------------------------------------------
+   MANEJO DEL TEMA (DARK/LIGHT)
+------------------------------------------------------------------- */
 function setTheme(theme) {
     if (theme === "dark") {
         body.classList.add("dark-theme");
@@ -21,33 +26,51 @@ function setTheme(theme) {
     }
 }
 
-// Comprobar el tema guardado
 const savedTheme = localStorage.getItem("theme") || "dark";
 setTheme(savedTheme);
 
-// Evento para cambiar el tema
 themeToggleInputHorizontal.addEventListener("change", function() {
     setTheme(this.checked ? "light" : "dark");
 });
 
-// Menú desplegable
-menuIcon.addEventListener("click", () => slideMenu.classList.add("open"));
-closeMenuIcon.addEventListener("click", () => slideMenu.classList.remove("open"));
+/* -------------------------------------------------------------------
+   MENÚ HAMBURGUESA 
+------------------------------------------------------------------- */
+menuIcon.addEventListener("click", () => {
+    slideMenu.classList.add("open");
+    menuIcon.style.display = "none";
+});
+
+closeMenuIcon.addEventListener("click", () => {
+    slideMenu.classList.remove("open");
+    menuIcon.style.display = "block";
+});
 
 slideMenuItems.forEach(item => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
+        e.preventDefault();
         slideMenu.classList.remove("open");
-        const target = document.querySelector(item.getAttribute("href"));
-        if (target) window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+        menuIcon.style.display = "block";
+
+        const targetId = item.getAttribute("href");
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: "smooth"
+            });
+        }
     });
 });
 
-/*Slider*/
+/* -------------------------------------------------------------------
+   SLIDER/CARRUSEL 
+------------------------------------------------------------------- */
 let items = document.querySelectorAll(".slider .list .item");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let thumbnails = document.querySelectorAll(".thumbnail .item");
-
 let countItem = items.length;
 let itemActive = 0;
 
@@ -67,10 +90,11 @@ prev.onclick = function () {
   showSlider();
 };
 
-// auto run slider
+// Auto-avance del slider cada 5 segundos
 let refreshInterval = setInterval(() => {
   next.click();
 }, 5000);
+
 function showSlider() {
   let itemActiveOld = document.querySelector(".slider .list .item.active");
   let thumbnailActiveOld = document.querySelector(".thumbnail .item.active");
@@ -102,25 +126,24 @@ thumbnails.forEach((thumbnail, index) => {
   });
 });
 
-// --- Alerta de cookies ---
+/* -------------------------------------------------------------------
+   MANEJO DE COOKIES
+------------------------------------------------------------------- */
 const cookiePopup = document.getElementById("cookiePopup");
 const acceptBtn = document.getElementById("acceptCookie");
 const rejectBtn = document.getElementById("rejectCookie");
 const cookieInfo = document.querySelector(".cookie-info");
 
-// Función para crear cookie
 function setCookie(name, value, days) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
 }
 
-// Función para verificar cookie
 function checkCookie() {
     return document.cookie.split(';').some(item => item.trim().startsWith('cookieAccepted='));
 }
 
-// Mostrar popup si no hay cookie
 function showCookiePopup() {
     if (!checkCookie()) {
         cookiePopup.classList.remove("hide");
@@ -128,62 +151,57 @@ function showCookiePopup() {
     }
 }
 
-// Al aceptar
+// Aceptar cookies
 acceptBtn.addEventListener("click", () => {
-    setCookie("cookieAccepted", "true", 365); // Cookie por 1 año
+    setCookie("cookieAccepted", "true", 365);
     cookiePopup.classList.add("hide");
     cookiePopup.classList.remove("show");
 });
 
-// Al rechazar
+// Rechazar cookies
 rejectBtn.addEventListener("click", () => {
-    // Mostrar mensaje de rechazo
     cookieInfo.classList.remove("hide");
     cookieInfo.classList.add("show");
     
-    // Ocultar los botones para evitar más clicks
     document.querySelector('.cookie-buttons').style.display = 'none';
     
-    // Ocultar todo después de 5 segundos (sin guardar cookie)
     setTimeout(() => {
         cookiePopup.classList.add("hide");
         cookiePopup.classList.remove("show");
         cookieInfo.classList.add("hide");
         cookieInfo.classList.remove("show");
         
-        // Restaurar botones para futuras apariciones
         document.querySelector('.cookie-buttons').style.display = 'flex';
     }, 5000);
 });
 
-// Mostrar popup al cargar la página
+// Muestra el popup al cargar la página
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(showCookiePopup, 1000);
 });
 
-
-/*FORMULARIO API*/
-// Validación del formulario
+/* -------------------------------------------------------------------
+   FORMULARIO Y API
+------------------------------------------------------------------- */
 document.getElementById('login-form').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  // Limpiar errores anteriores
+  // Limpia mensajes de error previos
   document.getElementById('email-error').textContent = '';
   document.getElementById('password-error').textContent = '';
   document.getElementById('form-error').textContent = '';
   
-  // Obtener valores
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   
-  // Validar email
+  // Validación de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
       document.getElementById('email-error').textContent = 'Por favor, introduce un email válido';
       return;
   }
   
-  // Validar contraseña
+  // Validación de contraseña
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
   if (!passwordRegex.test(password)) {
       document.getElementById('password-error').textContent = 
@@ -191,25 +209,23 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
       return;
   }
   
-  // Credenciales válidas (es un ejemplo)
+  // Credenciales de demo 
   const validCredentials = (
-      email === "usuario@ejemplo.com" && 
-      password === "Password1" // Cumple los requisitos: 8+ chars, mayúscula y número
+      email === "user@lasalle.com" && 
+      password === "Hola1234"
   );
   
   if (validCredentials) {
       document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
-      
       document.getElementById('users').classList.remove('hidden');
-      
       fetchUsers();
   } else {
       document.getElementById('form-error').textContent = 
-          'Credenciales incorrectas. Usa "usuario@ejemplo.com" y "Password1" para demo';
+          'Credenciales incorrectas. Usa "user@lasalle.com" y "Hola1234" para demo';
   }
 });
 
-// Función para obtener usuarios de la API
+// Get usuarios de la API
 function fetchUsers() {
   const usersContainer = document.getElementById('users-container');
   usersContainer.innerHTML = '<p>Cargando usuarios...</p>';
