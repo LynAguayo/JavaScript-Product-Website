@@ -1,50 +1,52 @@
-# PR02-0373-JS - Página Web Interactiva con Menú, Modal y Funcionalidades Dinámicas
+# ✨ SkinFlow
 
-Desarrollar una página web que incluya:
-- Un menú hamburguesa interactivo.
-- Un modal para la alerta de cookies.
-- Un modo oscuro/claro que cambie el diseño.
-- Un formulario para acceder a contenido privado
-- Una sección dinámica donde se carguen datos desde una API externa.
+**SkinFlow** es una página web que presenta una rutina diaria de cuidado facial con productos de la marca **SKIN1004**.  
+Las imágenes fueron obtenidas de su web oficial y de [Pexels](https://www.pexels.com/es-es/).
 
-## Secciones
+## Funcionalidades principales 🚀
+- **Menú hamburguesa interactivo**: abre/cierra el menú y navega entre secciones.
+- **Modal de alerta de cookies**: opción de aceptar o rechazar cookies.
+- **Modo oscuro/claro**: con guardado de preferencia en `localStorage`.
+- **Formulario de acceso**: validación de email y contraseña para acceder a contenido privado.
+- **Carga dinámica de usuarios**: tras login correcto, carga de datos desde una API externa.
 
-- Splash/Hero (debe ocupar mínimo el 100% del viewport)
-- Informacion (debe ocupar mínimo el 100% del viewport)
-- Usuarios (sólo visible si el login y password son correctos)
-- ... (puedes añadir otras secciones: fotos, videos, testimonios, pricing, mapa, contacto, ...)
-- Footer
+## Secciones de la página 📄
+- **Inicio**  
+- **Descripción**  
+- **Formulario**  
+- **Usuarios** (accesible tras login exitoso)  
+- **Footer**
 
-## Menú Hamburguesa Interactivo 🍔
+## Detalles de funcionamiento ⚙️
 
-- Al hacer clic en el icono, se debe abrir o cerrar el menú.
-- Al hacer clic en una opción, el menú se debe cerrar automáticamente.
-- Cada opción debe navegar al principio de cada sección.
+- **Menú hamburguesa 🍔**  
+  - Se abre/cierra al hacer clic.
+  - Se cierra automáticamente al seleccionar una opción.
+  - Cada opción navega a una sección.  
+  ![Menú hamburguesa](capturas/menu-hamburguesa.png)
 
-## Modal de Alerta de Cookies 🍪
+- **Modal de cookies 🍪**  
+  - Aparece al cargar la web.
+  - Permite aceptar o rechazar cookies.
+  - Si se rechaza, muestra mensaje informativo.  
+  ![Modal de cookies](capturas/modal-cookies.png)
 
-- Al cargar la web, se debe mostrar un modal con un mensaje sobre cookies.
-- El usuario puede Aceptar o Rechazar.
-- Si rechaza, se debe mostrar un mensaje informativo.
+- **Modo oscuro/claro 🌗**  
+  - Botón para alternar el tema.
+  - Preferencia guardada en `localStorage`.  
+  ![Modo oscuro/claro](capturas/modo-oscuro-claro.png)
 
-## Modo Oscuro/Claro 🌗
+- **Formulario de acceso 📝**  
+  - **Validaciones**:
+    - Email debe tener formato válido.
+    - Contraseña debe tener mínimo 8 caracteres, una mayúscula y un número.
+  - **Credenciales para acceso**:
+    - Usuario: `user@lasalle.com`
+    - Contraseña: `Hola1234`  
+  ![Formulario de acceso](capturas/formulario-acceso.png)
 
-- Un botón debe permitir cambiar entre modo oscuro y modo claro.
-- El estado del modo debe guardarse en localStorage para mantenerlo al recargar la página.
-
-> [!NOTE]
-> ver [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-
-## Formulario para acceder a contenido privado 📝
-
-- Campos requeridos: email y contraseña
-- Validaciones:
-  - email tiene que tener un formato válido
-  - contraseña tiene que tener al menos 8 carácteres, una mayúscula y un número.
-  
-## Carga de Datos desde una API Externa 📡
-
-Si el usuario/contraseña son correctos, se hace una petición a una api externa. (Si son incorrectos, se muestra un mejsaje de error).
-
-- Se debe mostrar una lista de usuarios obtenidos desde la API pública de https://jsonplaceholder.typicode.com/users.
-- Los datos se deben cargar al haber comprobado que el usuario y el password sean correctos.
+- **Carga de datos desde API externa 📡**  
+  - Si el login es correcto, se cargan usuarios desde:  
+    [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
+  - Si los datos son incorrectos, se muestra mensaje de error.  
+  ![Usuarios cargados desde API](capturas/usuarios-api.png)
