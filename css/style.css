@@ -12,6 +12,12 @@
     --secondary-color-hover: #ff5e00;
 }
 
+main > section {
+    min-height: 100vh;
+    padding-top: 1rem; 
+    box-sizing: border-box;
+}
+
 /* -------------------------------------------------------------------
     Estilos generales del body y temas (oscuro / claro)
 ------------------------------------------------------------------- */
