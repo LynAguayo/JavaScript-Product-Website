@@ -467,11 +467,12 @@ body.light-theme .info-card p {
     Formulario de inicio de sesión
 ------------------------------------------------------------------- */
 .form-section {
-    padding: 100px 5%;
+    padding: 50px 5%;
     background-color: #121212;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 body.light-theme .form-section {
@@ -483,9 +484,10 @@ body.light-theme .form-section {
     margin: 0 auto;
     width: 100%;
     background-color: #1a1a1a;
-    padding: 40px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    box-sizing: border-box;
 }
 
 body.light-theme .form-container {
@@ -507,7 +509,6 @@ body.light-theme .section-subtitle {
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
 .form-group {
