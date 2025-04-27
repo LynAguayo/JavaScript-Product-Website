@@ -1,7 +1,7 @@
 # ✨ SkinFlow
 
 **SkinFlow** es una página web que presenta una rutina diaria de cuidado facial con productos de la marca **SKIN1004**.  
-Las imágenes fueron obtenidas de su web oficial y de [Pexels](https://www.pexels.com/es-es/).
+Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y de [Pexels](https://www.pexels.com/es-es/).
 
 ## Funcionalidades principales 🚀
 - **Menú hamburguesa interactivo**: abre/cierra el menú y navega entre secciones.
