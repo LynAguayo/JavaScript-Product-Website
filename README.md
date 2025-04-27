@@ -14,7 +14,7 @@ Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y 
 - **Inicio**  
 - **Descripción**  
 - **Formulario**  
-- **Usuarios** (accesible tras login exitoso)  
+- **Usuarios** (accesible tras login)  
 - **Footer**
 
 ## Detalles de funcionamiento ⚙️
