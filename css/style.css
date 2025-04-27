@@ -94,6 +94,7 @@ body.light-theme .header {
     transition: transform 0.3s ease, background-color 0.3s ease;
     z-index: 102;
     padding-left: 2rem;
+    padding-right: 1rem;
     font-weight: 600;
     color: white;
 }
@@ -180,6 +181,10 @@ input:checked + .slider-horizontal {
 
 input:checked + .slider-horizontal:before {
     transform: translateX(20px);
+}
+
+.theme-toggle-label-horizontal {
+    padding: 0 1rem; 
 }
 
 /* -------------------------------------------------------------------
@@ -694,7 +699,7 @@ body.light-theme .footer p {
 .footer-iconTop a:hover {
     background-color: var(--secondary-color-hover);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(59, 143, 217, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .footer-iconTop a i {
