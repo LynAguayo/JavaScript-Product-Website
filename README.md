@@ -1,6 +1,8 @@
 # ✨ SkinFlow
 
 **SkinFlow** es una página web que presenta una rutina diaria de cuidado facial con productos de la marca **SKIN1004**.  
+Puedes verlo en el navegador usando el siguiente enlace: [**skinflow.netlify.app**](https://skinflow.netlify.app/).
+
 Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y de [Pexels](https://www.pexels.com/es-es/).
 
 ## Funcionalidades principales 🚀
@@ -55,6 +57,3 @@ Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y 
     [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
   - Si los datos son incorrectos, se muestra mensaje de error.  
   ![Usuarios cargados desde API](screenshots/usuarios-api.png)
-
-Puedes verlo usando el siguiente enlace:
-[**skinflow.netlify.app**](https://skinflow.netlify.app/)
