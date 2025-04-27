@@ -23,18 +23,23 @@ Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y 
   - Se abre/cierra al hacer clic.
   - Se cierra automáticamente al seleccionar una opción.
   - Cada opción navega a una sección.  
-  ![Menú hamburguesa](capturas/menu-hamburguesa.png)
+  ![Menú hamburguesa](screenshots/menu-hamburguesa.png)
 
 - **Modal de cookies 🍪**  
   - Aparece al cargar la web.
   - Permite aceptar o rechazar cookies.
   - Si se rechaza, muestra mensaje informativo.  
-  ![Modal de cookies](capturas/modal-cookies.png)
+  ![Modal de cookies](screenshots/alerta-cookies.png)
+  ![Cookie aceptada](screenshots/cookie-aceptada.png)
+  ![Cookie rechazada](screenshots/cookie-rechazada.png)
+
 
 - **Modo oscuro/claro 🌗**  
   - Botón para alternar el tema.
   - Preferencia guardada en `localStorage`.  
-  ![Modo oscuro/claro](capturas/modo-oscuro-claro.png)
+  ![Modo oscuro/claro](screenshots/modo-claro.png)
+  ![Caotura LocalStorage](screenshots/local-storage.png)
+
 
 - **Formulario de acceso 📝**  
   - **Validaciones**:
@@ -43,10 +48,10 @@ Las imágenes fueron obtenidas de su [web oficial](https://www.skin1004.com/) y 
   - **Credenciales para acceso**:
     - Usuario: `user@lasalle.com`
     - Contraseña: `Hola1234`  
-  ![Formulario de acceso](capturas/formulario-acceso.png)
+  ![Formulario de acceso](screenshots/formulario.png)
 
 - **Carga de datos desde API externa 📡**  
   - Si el login es correcto, se cargan usuarios desde:  
     [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
   - Si los datos son incorrectos, se muestra mensaje de error.  
-  ![Usuarios cargados desde API](capturas/usuarios-api.png)
+  ![Usuarios cargados desde API](screenshots/usuarios-api.png)
